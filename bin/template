@@ -1,0 +1,11 @@
+#!/bin/bash
+if [ ! -f "composer.json" ]; then
+    echo "Cloning of https://github.com/esimonetti/SugarTemplateModule.git in progress, please wait..."
+    git clone https://github.com/esimonetti/SugarTemplateModule.git .
+    rm -rf .git
+    export COMPOSER_ALLOW_SUPERUSER=1;
+    echo "Downloading of esimonetti/sugar-module-packager in progress, please wait..."
+    composer update
+else
+    echo "composer.json is already present in the current directory. Please use a new path to initialise a new installable package"
+fi

@@ -4,6 +4,8 @@ MAINTAINER enrico.simonetti@gmail.com
 RUN apt-get update \
     && apt-get install -y \
     libzip-dev \
+    unzip \
+    git \
     --no-install-recommends \
     && apt-get clean \
     && apt-get -y autoremove \
@@ -14,3 +16,5 @@ RUN pecl install zip \
 
 RUN curl -sS http://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
+
+COPY bin/* /usr/local/bin/

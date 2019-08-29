@@ -1,0 +1,11 @@
+#!/bin/bash
+if [ ! -f ".gitignore" ]; then
+    echo "Generating default .gitignore file"
+    touch .gitignore
+    echo "composer.lock" >> .gitignore
+    echo "/vendor/" >> .gitignore
+    echo "/pkg/" >> .gitignore
+    echo "/releases/" >> .gitignore
+else
+    echo ".gitignore is already present in the current directory, skipped."
+fi
