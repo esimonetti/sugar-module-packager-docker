@@ -2,7 +2,7 @@
 if [ ! -f "composer.json" ]; then
     echo "Downloading of esimonetti/sugar-module-packager in progress, please wait..."
     export COMPOSER_ALLOW_SUPERUSER=1;
-    composer require esimonetti/sugar-module-packager 0.2.2
+    composer require esimonetti/sugar-module-packager 0.2.3
     generategitignore
 else
     echo "composer.json is already present in the current directory. Please use a new path to initialise a new installable package"
